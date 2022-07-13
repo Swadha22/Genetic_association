@@ -19,13 +19,17 @@
       annotate_variation.pl -buildver hg19 -downdb -webfrom annovar refGene humandb/
       
   ###### Annotating the VCF file:    
-       perl table_annovar.pl snp_only.vcf  humandb/ -buildver hg19   -out snp_anno -remove  -protocol refGene,cytoBand, -operation g,r -nastring .  -arg '-splicing 12 -exonicsplicing','-splicing 12 -exonicsplicing' -vcfinput
+       perl  table_annovar.pl  snp_only.vcf   humandb/ -buildver hg19   -out snp_anno -remove  -protocol refGene  -nastring . -arg '-splicing 12'   -vcfinpu --operation g
 
       How many unique variants are in this file?
-          5323 variants are unique
+          5323 variants are unique out of 5747 SNPs
      
       How many “splicing” variants do you see in the refseq annotation?
-          I found 200 splicing variant
-          
+         I found 221 splicing variant which included: 
+            194 splicing 
+            2 ncRNA_splicing 
+            1 ncRNA_exonic;splicing 
+            24 exonic;splicing
+            
       How many “startloss” variants do you see?
-          I did not find any "startloss" variant
+          I found 4 "startloss" variant
