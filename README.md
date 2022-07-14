@@ -232,8 +232,8 @@ head(subset_cases,10)
     The association between them is negative (inverse co-relation), which means, when `mpg of the car` decreases the weight of the car` increases.
     The association between them is significant with a p-value of <2e-16).
     
-   
- ![ wt_mpg_association ](VCF-file-handeling-and-processing/wt_mpg_association.png)
+  ![wt_mpg_association](wt_mpg_association.png)
+  
     #### Fig-1: The association between MPG and weight of the car is inversely co-related.
     
    ### **Q10:** Please create a new variable to indicate cars having MPG greater than 23 as 1, otherwise 0, then use logistic regrssion via `glm()` function to analyze association between weight and this new variable you just created. Please comment on what you find.
@@ -252,12 +252,18 @@ head(subset_cases,10)
         # fitting LOGISTIC MODEL FOR THE NEW VARIABLE
         fit_10 = glm(mpglevel ~ weight, family = binomial(link = 'logit'), new_var)
         summary(fit_10)
-        plot(fit_10)
+      
 
-  ![ VCF-file-handeling-and-processing/LOGISTIC_FOR_NEW_VARIABLE.png ](VCF-file-handeling-and-processing/LOGISTIC_FOR_NEW_VARIABLE.png)
+     plot(new_var$weight~new_var$mpg)
+   ![newVariable_wt_mpg_association.png](newVariable_wt_mpg_association.png)
+   #### Fig-2: The association between MPG and weight of the car for this new variable is still inversely co-related
+
+  
    
    
    ###   **Q11:** Find the `Estimates` from your association results summary. How do you interpret the estimated effects of weight in the context of linear regression, and in the context of logistic regression?
+   
+![logisticVSlinear](https://user-images.githubusercontent.com/19541149/179116034-295b35c6-bda5-42a1-83c0-1d9aa66314ae.jpg)
 
    
    
