@@ -5,6 +5,9 @@
 
   #### Task 1a: Use the provided Test_annotate.vcf to select only the SNPs using the Genomic Analysis Toolkit aka GATK (thus removing the INDELS). Provide us with the code you used to do this.
   
+    There were 5746 SNPs out of 6000 in the vcf.
+    This is the code I used:
+    
     ./gatk SelectVariants -select-type SNP -V Test_annotate.vcf -O snp_only.vcf
     # I confirmed the output with bcftools 
            bcftools view --types snps Test_annotate.vcf > test.vcf
