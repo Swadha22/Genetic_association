@@ -263,7 +263,26 @@ head(subset_cases,10)
    
    ###   **Q11:** Find the `Estimates` from your association results summary. How do you interpret the estimated effects of weight in the context of linear regression, and in the context of logistic regression?
    
+
+        # fit model LINEAR FOR NEWLY CREATED VARIABLE
+
+        fit_3<-lm(mpglevel ~ weight, new_var)
+        summary(fit_3)
+        plot(fit_3)
+
+
+        # fit model LOGISTIC FOR NEW Vr
+        fit_10 = glm(mpglevel ~ weight, family = binomial(link = 'logit'), new_var)
+        summary(fit_10)
+        plot(fit_10)
+
+
+   
+   Logestic regression model is better for this type of analysis because residuals in this case are fitting more towards the zero as compared to the Linear regression model.
+   
 ![logisticVSlinear](https://user-images.githubusercontent.com/19541149/179116034-295b35c6-bda5-42a1-83c0-1d9aa66314ae.jpg)
+   #### Fig3. Comparision of logestic regression fitting (Top) with linear regression fitting model (below).
+
 
    
    
