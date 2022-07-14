@@ -16,10 +16,17 @@
       
   ###### Downloading RefSeq and cytoBand databases for annotation
       annotate_variation.pl -buildver hg19 -downdb -webfrom annovar refGene humandb/
+      annotate_variation.pl -buildver hg19 -downdb cytoBand humandb/
       
   ###### Annotating the VCF file:    
        perl  table_annovar.pl  snp_only.vcf   humandb/ -buildver hg19   -out snp_anno -remove  -protocol refGene  -nastring . -arg '-splicing 12'   -vcfinpu --operation g
-
+       
+       
+       perl  table_annovar.pl  snp_only.vcf   humandb/ -buildver hg19   -out snp_anno -remove  -protocol refGene,cytoBand   -nastring . -vcfinpu --operation g,g
+       
+       
+       
+       
       How many unique variants are in this file?
           5323 variants are unique out of 5747 SNPs
      
