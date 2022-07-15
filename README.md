@@ -57,7 +57,8 @@
 
       To find the number unique variants, a subset of the VCF file was made which had 4 columns as: "#CHROM"	"POS"	"REF"	"ALT". 
       The BASH command, "uniq -c" and "sed" was used to count repeated SNPs. Here is the exact command wich as used:
-      sed <<'s/\t/_/g' totest.Unique.variants.vcf | sort | uniq -c >>      
+      
+      << sed's/\t/_/g' totest.Unique.variants.vcf | sort | uniq -c  >>      
 
       The first column of the output of the above command, had frequency of each SNP, which was counted.  A total of 5323 variants were unique out of 5747 SNPs.
 
