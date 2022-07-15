@@ -45,6 +45,17 @@
 
 
 
+  #### Task 1c: Write a short methods section (similar as for a peer-reviewed paper) to describe what you did in task 1a and 1b
+  
+      To analyze and handle the VCF file, we first of all fetched all the SNPs (deleted indels) using the tool "GATK" which is a standard tool for identifying SNPs and indels. I cross checked the output of GATK with another tool called "bcftools" which is a set of utilities that manipulate variant calls in the Variant Call Format. The SNPs were then annotated with the tool Annovar (ANNOtate VARiation) for the further interpretation of single nucleotide variants. The output of the tool "ANNOVAR" had informations about the splice sites, startloss, startgain, synonyms non-synonyms mutations. A total of 221 splicing cites were annotated which included 194 splicing, 2 ncRNA_splicing, 1 ncRNA_exonic;splicing and 24 exonic;splicing. 
+We also found 4 "startloss" variant.
+
+      To find the number unique variants, a subset of the VCF file was made which had 4 columns as: "#CHROM"	"POS"	"REF"	"ALT". The BASH command, "uniq -c" and "sed" was used to count repeated SNPs. Here is the exact command wich as used:
+      sed <<'s/\t/_/g' totest.Unique.variants.vcf | sort | uniq -c >>      
+The first column of the output of the above command, had frequency of each SNP, which was counted.  A total of 5323 variants were unique out of 5747 SNPs.
+
+    
+
 # Task 3- R exercise: phenotype data proprocessing
   ## Dataset 
   
