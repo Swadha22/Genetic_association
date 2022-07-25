@@ -60,7 +60,7 @@
       
       << sed's/\t/_/g' totest.Unique.variants.vcf | sort | uniq -c  >>      
 
-      The first column of the output of the above command, had frequency of each SNP, which was counted.  A total of 5323 variants were unique out of 5747 SNPs.
+      The first column of the output of the above command, had frequency of each SNP, which was counted.  A total of 5740 variants were unique out of 5746 SNPs.
 
     
 
