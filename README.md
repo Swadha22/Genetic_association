@@ -31,7 +31,7 @@
        
        
       How many unique variants are in this file?
-          5323 variants are unique out of 5747 SNPs
+          Out of 5746 SNPs, 5740 were unique
      
       How many “splicing” variants do you see in the refseq annotation?
          I found 221 splicing variant which included: 
